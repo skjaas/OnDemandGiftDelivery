@@ -1,0 +1,77 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tabs Payment Form Flat Responsive Widget Template :: w3layouts</title>
+<!-- custom-theme -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Tabs Payment Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+{% load static %}
+<link href="{% static '/payment/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static '/payment/css/creditly.css' %}" type="text/css" media="all" />
+<link rel="stylesheet" href="{% static '/payment/css/easy-responsive-tabs.css' %}">
+<script src="{% static '/payment/js/jquery.min.js' %}"></script>
+<!-- font-awesome-icons -->
+<link href="{% static '/payment/css/font-awesome.css' %}" rel="stylesheet"> 
+<!-- //font-awesome-icons -->
+<link href="//fonts.googleapis.com/css?family=Mirza:400,500,600,700&amp;subset=arabic,latin-ext" rel="stylesheet">
+</head>
+<body>
+	<div class="main">	
+        <h1><font color="white">{{msg}}</font></h1>
+        <br><br><br>
+        <a href="/chome"><font color="white" style="margi-left:75%;">Back To Home Page</font></a>
+	</div>
+	<!-- credit-card -->
+		<script type="text/javascript" src="{% static '/payment/js/creditly.js' %}"></script>
+		<script type="text/javascript">
+			$(function() {
+			  var creditly = Creditly.initialize(
+				  '.creditly-wrapper .expiration-month-and-year',
+				  '.creditly-wrapper .credit-card-number',
+				  '.creditly-wrapper .security-code',
+				  '.creditly-wrapper .card-type');
+
+			  $(".creditly-card-form .submit").click(function(e) {
+				e.preventDefault();
+				var output = creditly.validate();
+				if (output) {
+				  // Your validated credit card output
+				  console.log(output);
+				}
+			  });
+			});
+		</script>
+	<!-- //credit-card -->
+	<!-- tabs -->
+	<script src="{% static '/payment/js/easy-responsive-tabs.js' %}"></script>
+	<script>
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true,   // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function(event) { // Callback function if tab is switched
+				var $tab = $(this);
+				var $info = $('#tabInfo');
+				var $name = $('span', $info);
+				$name.text($tab.text());
+				$info.show();
+				}
+			});
+		});
+	</script>
+	<!-- //tabs -->
+</body>
+</html>

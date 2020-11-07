@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="#">Home <span class="sr-only">(current)</span></a>
+              </div>
+            </div>
+          </div>
+          </nav>
+          <div class="container main">
+              <div class="row">
+                
+              <div  class="col-md-6 col-sm-12 ad">
+                  <p style="font-size:40px;font-family:'Righteous';">The Best On Demand Gift Delivery Service</p>
+                  <p style="font-size:24px;">Choose the surprise and location, and we will take care of the rest</p>
+                  <p><center><img src="{% static 'images/gift.png' %}" ></center></p>
+                 
+              </div>
+              
+              <div class="col-md-6 col-sm-12">
+                <form action="/loginlog/" method="POST">
+                {% csrf_token %}
+                  <p style="font-family:Arvo;font-size:30px;">Welcome Back</h2><font color="red"><h4>{{msg}}</font></h4>
+                  <p style="font-family:Arvo;font-size:24px;">Sign in to your account</p>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+                    <small id="emailHelp" class="form-text text-muted">Enter your registered Username.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+
+                  <!--<div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>-->
+                  <br>
+                  <button type="submit" class="btn btn-primary" style="width:100px;">Login</button><br><br>
+                  <p style="font-size:20px;">New to Gyftt? <a href="/csignup"> Signup here</a></p>
+                  <p><a href="/ssignup">Register your business </a> and start selling your gift products.</p>
+                </form>
+              </div>
+              </div>
+              
+          </div>
+    {% endblock %}
+        
+        

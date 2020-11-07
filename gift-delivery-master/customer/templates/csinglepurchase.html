@@ -1,0 +1,38 @@
+{% extends 'cbase.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link ln" href="/chome">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-item nav-link ln" href="/cmyorders">Orders</a>               
+
+            </div>
+            </div>
+          </div>
+          </nav>
+          <br><br><br>
+          <h1 style="color: #9069c7;"> <center> <u style="border-bottom: 4px dotted blue;"> PURCHASE DETAILS </u> </center> </h1>
+          <br><br><br>
+              <center>
+              <table border="0">
+                  <col width="500">
+                      <tr>
+                            <td>
+                                <ul>
+                                <li><h5 style="color:black">Your Name:<font color="red"> {{purchase.customer}}</font> </h4></li>
+                                <li><h5 style="color:black"> Delivery Time &amp; Date:<font color="red"> {{purchase.ctime}}, {{purchase.cdate}} </font> </h4></li>
+                                <li><h5 style="color:black">Delivery Address:<p align="justify"> <font color="red">{{purchase.caddress}}</font></p> </h4></li>
+                                <li><h5 style="color:black">Amount to be paid:<font color="red"> {{purchase.camount}} /- Rs</font> </h4></li>
+                                </ul>
+                                <b><a href="/paynow/{{proid}}" style="font-size:200%;color:green">Pay Now</a></b>
+                            </td>
+                      </tr>
+              </table>
+              </center>
+{% endblock %}

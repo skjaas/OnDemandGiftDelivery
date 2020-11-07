@@ -1,0 +1,56 @@
+{% extends 'cbase.html' %}
+{%load static %}
+{% block content %}
+<script type="text/javascript" >
+function preventBack(){window.history.forward();}
+setTimeout("preventBack()", 0);
+window.onunload=function(){null};
+</script>
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="/chome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/cmyorders">Orders</a>               
+                <a class="nav-item nav-link ln" href="/logout">Logout</a>
+            </div>
+            </div>
+          </div>
+          </nav>
+          <br><br><br><br><br><br>
+              <form action="/zipcode/" method="POST" style="margin-left:30px">
+              {% csrf_token %}
+              <br><br><br><br>
+              <table style="margin-left:200px;">
+                  <tr>
+                      <td style="color:red;font-weight:bold;">ZIPCODE</td>
+                      <td><input type="text" placeholder="Enter Zipcode" name="zipcode" style="width:300%;color:green;" ></td>
+                  </tr>
+                  <tr>
+                      <td style="color:red;font-weight:bold;">CATEGORY</td>
+                      <td>
+                            <select name="category"  style="width:300%">
+                            <option value="---------" style="color:green;">Select a category</option>
+                            <option value="Clock" style="color:green;">Clock</option>
+                            <option value="Teddy" style="color:green;">Teddy</option>
+                            <option value="Watch" style="color:green;">Watch</option>
+                            <option value="Flower" style="color:green;">Flower</option>
+                            <option value="Card" style="color:green;">Card</option>
+                            <option value="Perfume" style="color:green;">Perfume</option>
+                            <option value="Plates" style="color:green;">Plates</option>
+                            <option value="Dinner Set" style="color:green;">Dinner Set</option>
+                            <option value="Flower Vase" style="color:green;">Flower Vase</option>
+                            <option value="Bag" style="color:green;">Bag</option>
+                        </select>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><center><input type="submit" value="SEARCH" ></center></td>
+                  </tr>
+              </table>
+              </form>
+{% endblock %}

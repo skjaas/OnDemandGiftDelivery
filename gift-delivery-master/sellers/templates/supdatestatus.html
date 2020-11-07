@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<script type="text/javascript" >
+function preventBack(){window.history.forward();}
+setTimeout("preventBack()", 0);
+window.onunload=function(){null};
+</script>
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link ln" href="/shome">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link ln" href="/sorders">Orders</a>               
+              <a class="nav-item nav-link ln" href="/sproducts">Products</a>
+              <a class="nav-item nav-link ln" href="/sreports">Reports</a>
+            </div>
+            </div>
+          </div>
+          </nav>
+          <br><br><br><br><br><br>
+              <form action="/supdatenewstatus/{{id}}/" method="POST" style="margin-left:30px">
+              {% csrf_token %}
+              <center>
+              <table style="position: center center center">
+                  <tr>
+                      <td>Current Status</td> 
+                      <td><input type="text" value="{{scurrentstatus}}" name="status" style="text-align:center;" ></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><center><input type="submit" value="UPDATE" ></center></td>
+                  </tr>
+              </table>
+            </center>
+              </form>
+{% endblock %}

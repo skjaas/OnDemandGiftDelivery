@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="/shome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/sorders">Orders</a>               
+                <a class="nav-item nav-link ln" href="/sproducts">Products</a>
+                <a class="nav-item nav-link ln" href="/sreports">Reports</a>
+              </div>
+            </div>
+          </div>
+          </nav>
+        <div class="container main" style="margin-top:10%;">
+            <table border="2">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+                <tr>
+                    <td><center>Name</center></td><td><center>Category</center></td>
+                    <td><center>Image</center></td><td><center>Price</center></td>
+                    <td><center>Stock</center></td><td><center>Action</center></td>
+                </tr>
+
+                {% for i in pro %}
+                    <tr>
+                          <td><center>{{i.name}}</center></td><td><center>{{i.category}}</center></td>
+                          <td><center><img src="{{i.image}}" width="250" height="200"></center></td>
+                          <td><center>{{i.price}}</center></td>
+                          <td><center>{{i.stock}}</center></td>
+                          <td><center><a href="/sdeleteproduct/{{i.id}}">Delete</a></center></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
+{% endblock %}

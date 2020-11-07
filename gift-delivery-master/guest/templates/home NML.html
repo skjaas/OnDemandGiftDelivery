@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <!--head begins here-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Resume Application">
+        <meta name="keywords" content="HTML,CSS,JavaScript">
+        <meta name="author" content="Akhil K Thomas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume Home </title>
+        <!--downloaded jquery and popper-->
+        <script src="{% static 'css\bootstrap-4.3.1-dist\js\popper.min.js' %}"></script>
+        <script src="{% static 'css\bootstrap-4.3.1-dist\js\jquery-3.4.1.slim.js' %}"></script>
+         <!-- Latest compiled JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <!--downloaded bootstrap-->
+        <link rel="stylesheet" type="text/css" href="{% static '1   css\bootstrap-4.3.1-dist\css\bootstrap.min.css' %}">
+        <script src="{% static 'css\bootstrap-4.3.1-dist\js\bootstrap.min.js' %}"></script> 
+        <!-- bootstrap cdn -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!--custom styles-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css\style.css' %}">
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Arvo|Fredoka+One|Libre+Caslon+Text|Ma+Shan+Zheng|Merriweather|Patua+One|Paytone+One|Permanent+Marker|Raleway|Red+Hat+Display|Red+Hat+Text|Righteous|Roboto|Roboto+Slab|Saira+Stencil+One&display=swap" rel="stylesheet"> 
+        <!--font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            
+            
+        </style>
+      
+    </head>
+    <body>
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Wresume</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="#">Features</a>
+                <a class="nav-item nav-link ln" href="#">Pricing</a>
+                <form action="index.php"><button type="submit" class="btn btn-primary ln">Signup</button></form>
+              </div>
+            </div>
+          </div>
+          </nav>
+          <div class="container main">
+              <div class="row">
+              
+              <div  class="col-md-6 col-sm-12 ad">
+                  <p style="font-size:40px;font-family:'Righteous';">Create a professional resume in minutes.</p>
+                  <p style="font-size:24px;">Land your dream job with the perfect resume employers are looking for!</p>
+              </div>
+              
+              <div class="col-md-6 col-sm-12">
+                <form>
+                  <p style="font-family:Arvo;font-size:30px;">Welcome Back</h2>
+                  <p style="font-family:Arvo;font-size:24px;">Sign in to your account</p>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">Enter your registered email address.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <small id="emailHelp" class="form-text text-muted">Forgot password? <a href="#reset">reset password</a></small>
+                  </div>
+
+                  <!--<div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>-->
+                  <button type="submit" class="btn btn-primary" style="width:100px;">Login</button><br>
+                  <p style="font-size:20px;">New to wresume?<a href="signup">Signup here</a></p>
+                  <p><a href="signup">Register your firm </a> and find the right candidates from here.</p>
+                </form>
+              </div>
+              </div>
+              
+          </div>
+        
+          <footer class="footer">
+            <div class="container">
+                <span class="text-muted">WRESUME &copy; All rights reserved. This website is designed by <a href="https://www.twitter.com/akhil_k_thomas">Akhil K Thomas</a>.</span>
+            </div>
+          </footer>
+    </body>

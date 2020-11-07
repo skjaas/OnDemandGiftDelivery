@@ -1,0 +1,47 @@
+{% extends 'cbase.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="/chome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/cmyorders">Orders</a>               
+              </div>
+            </div>
+          </div>
+          </nav>
+        <div class="container main" style="margin-top:10%;">
+            <table border="2">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+            <col width="350">
+                <tr style="color:red;">
+                    <td><center>Name</center></td><td><center>Category</center></td>
+                    <td><center>Image</center></td><td><center>Price</center></td>
+                    <td><center>Status</center></td><!--<td><center>Action</center></td>-->
+                </tr>
+
+                {% for i in orders %}
+                    <tr style="color:blue;">
+                          <td><center>{{i.citemname}}</center></td><td><center>{{i.camount}}</center></td>
+
+                          <td><center>{{i.caddress}}</center></td>
+                          <td><center><img src="{{i.cimage}}" width="250" height="150" /></center></td>
+                          <td><center>{{i.cstatus}}</center></td>
+                          <td><center><a href="/cancelorder/{{i.id}}/">Cancel Order</a></center></td>
+                         
+                    </tr>
+                {% endfor %}
+            </table>
+            <b><font color="black" >NB : </font></b><u><i><font color="red">Order Can be canceled only before Packing</font></i></u>
+        </div>
+        
+{% endblock %}

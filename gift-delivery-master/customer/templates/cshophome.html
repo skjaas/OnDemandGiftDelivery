@@ -1,0 +1,40 @@
+{% extends 'cbase.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link ln" href="/chome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/cmyorders">Orders</a>               
+            </div>
+            </div>
+          </div>
+          </nav>
+          <br><br><br><br><br><br>
+          <div style="margin-left: 100px;">
+              <table border="0">
+                  <col width="300">
+                  <col width="300">
+                    {% for i in pro %}
+                        <tr style="color:black;">
+                            <td><center><img src="{{i.image}}" width="250" height="150" /></center></td>
+                            <td>
+                                  <ul>
+                                  <center><a href="/cgiftform/{{i.id}}/"><u>{{i.name}}</u></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">{{i.price}}/- Rs</font></center>
+                                  <li>{{i.category}}</li>
+                                  <li><p align="justify"><font color="black">{{i.description}}</font></p></li>
+                                  <li>Ideal For : {{i.idealfor}}</li>
+                                  <li style="border-bottom: 4px dotted blue;">.......................................................................................................</li>
+                                  </ul>
+                            </td>
+                            
+                        </tr> 
+                  {% endfor %}
+              </table>
+          </div>
+{% endblock %}

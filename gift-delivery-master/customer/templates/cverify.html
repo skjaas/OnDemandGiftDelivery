@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="#">Features</a>
+                <a class="nav-item nav-link ln" href="#">Pricing</a>
+                <form action="index.php"><button type="submit" class="btn btn-primary ln">Signup</button></form>
+              </div>
+            </div>
+          </div>
+          </nav>
+          <div class="container main">
+              <div class="row">
+              
+              <div  class="col-md-12 col-sm-12 ad">
+                <center>
+                  <p style="font-size:24px;font-family:'Righteous';">Verify your email id</p>
+                 <font color="red">{{msg}}</font>
+                  <p><img src="{% static 'images/post.png' %}" ></p>
+                  <p style="font-size:24px;">Enter OTP sent to your email</p>
+
+                  <form action="/cotpverify/" method="POSt">
+                   {% csrf_token %}
+                    <div class="form-group col-md-3 col-sm-4">
+                      <input type="text" name='otp' class="form-control" id="name" aria-describedby="emailHelp" placeholder="OTP">
+                      
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width:100px;">Verify</button><br><br>
+                  
+                
+                  </form>
+                </center>
+              </div>
+              
+        
+              </div>
+              
+          </div>
+        
+{% endblock %}

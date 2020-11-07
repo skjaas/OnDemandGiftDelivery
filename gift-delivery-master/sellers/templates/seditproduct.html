@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link ln" href="/shome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/sorders">Orders</a>               
+                <a class="nav-item nav-link ln" href="/sproducts">Products</a>
+                <a class="nav-item nav-link ln" href="/sreports">Reports</a>
+              </div>
+            </div>
+          </div>
+          </nav>
+        <div class="container main" style="margin-top:5%;">
+        <form action="/supdateproducts/{{pro.id}}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="row"> 
+                <div  class="col-md-1 col-sm-12 ad">
+                  <center>
+                  <label for="Product name" style="width:300%;" >Product Name</label>
+                    <input type="text" name="productname" value="{{pro.name}}"  style="width:1000%;text-align:center;">
+                  </center>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div  class="col-md-1 col-sm-12 ad">
+                  <center>
+                   <label for="Product name" style="width:300%;" >Price of Product</label>
+                    <input type="number" name="productprice" style="width:1000%;text-align:center;" value="{{pro.price}}" min=1>
+                  </center>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div  class="col-md-1 col-sm-12 ad">
+                  <center>
+                   <label for="Product name" style="width:300%;" >Available Stock</label>
+                    <input type="number" name="productstock" style="width:1000%;text-align:center;" value="{{pro.stock}}" min=1>
+                  </center>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div  class="col-md-1 col-sm-12 ad">
+                  <center>
+                  <label for="Product name" style="width:300%;" >Product Category</label>
+                    <input type="text" name="productcategory" value="{{pro.category}}"  style="width:1000%;text-align:center;">
+                  </center>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div  class="col-md-1 col-sm-12 ad">
+                  <center>
+                  <label for="Product name" style="width:300%;" >Description</label>
+                    <textarea name="productdescription"style="width:1000%;text-align:center;">{{pro.description}}</textarea>
+                  </center>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div  class="col-md-1 col-sm-12 ad">
+                  <center>
+                  <label for="Product name" style="width:300%;" >Idealfor</label>
+                    <input type="radio" name="productidealfor" value="kids" style="width:250%;text-align:center;">KIDS
+                    <input type="radio" name="productidealfor" value="women" style="width:250%;text-align:center;">WOMEN
+                    <input type="radio" name="productidealfor" value="men" style="width:250%;text-align:center;">MEN
+                    <input type="radio" name="productidealfor" value="both" style="width:250%;text-align:center;">BOTH
+                  </center>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div  class="col-md-1 col-sm-12 ad">
+                    <input type="file" name="productimage" value="{{pro.image}}" style="width:1000%;text-align:center;">
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div  class="col-md-1 col-sm-12 ad">
+                    <input type="submit" value="Update" style="width:500%;text-align:center;">
+                </div>
+            </div>
+        </form>
+        </div>
+        
+{% endblock %}

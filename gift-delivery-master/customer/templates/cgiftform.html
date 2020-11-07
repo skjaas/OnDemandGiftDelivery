@@ -1,0 +1,61 @@
+{% extends 'cbase.html' %}
+{%load static %}
+{% block content %}
+        <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+          <div class="container">
+            <a class="navbar-brand br" href="#">Gyftt</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup" style="">
+            <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link ln" href="/chome">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link ln" href="/cmyorders">Orders</a>
+            </div>
+            </div>
+          </div>
+          </nav>
+          <br><br><br><br><br><br>
+          <div style="margin-left: 100px;">
+              <table border="0">
+                    <col width="300">
+                    <col width="300">
+                    <form action="/csendgift/" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{proid}}" name="proid">
+                        <tr>
+                            <td>Your Name :</td>
+                            <td>
+                                <input type="text" name="customer" placeholder="Enter Your Name" style="width:500px">
+                            </td>
+                            <td rowspan="4"><img src="{{proimage}}" style="size:relative" width="250" height="250"></td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Date :</td>
+                            <td>
+                                <input type="date" name="cdate" min="20/03/2020" style="width:500px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Time :</td>
+                            <td>
+                                <input type="time" name="ctime" style="width:500px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Full Address :</td>
+                            <td>
+                                <textarea name="caddress" placeholder="Enter your address......." style="width:500px">
+                                </textarea>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td colspan="2">
+                                <center>
+                                    <input type="submit" value="Buy" style="width:500px" style="background-color:blue;" >
+                                </center>
+                            </td>
+                        </tr>
+              </table>
+          </div>
+{% endblock %}
